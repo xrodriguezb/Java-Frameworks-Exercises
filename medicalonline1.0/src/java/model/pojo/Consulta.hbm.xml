@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27/11/2014 11:37:42 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="model.pojo.Consulta" table="consulta" catalog="medicalonline">
+        <id name="idConsulta" type="java.lang.Integer">
+            <column name="idConsulta" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="paciente" class="model.pojo.Paciente" fetch="select">
+            <column name="idPaciente" not-null="true" />
+        </many-to-one>
+        <property name="fechaConsulta" type="timestamp">
+            <column name="fechaConsulta" length="19" not-null="true" />
+        </property>
+        <property name="txtDescripcion" type="string">
+            <column name="txtDescripcion" length="100" not-null="true" />
+        </property>
+        <property name="estatus" type="string">
+            <column name="estatus" length="10" not-null="true" />
+        </property>
+        <property name="activo" type="byte">
+            <column name="activo" not-null="true" />
+        </property>
+        <property name="fechaCreacion" type="timestamp">
+            <column name="fechaCreacion" length="19" not-null="true" />
+        </property>
+        <property name="fechaModificacion" type="timestamp">
+            <column name="fechaModificacion" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
