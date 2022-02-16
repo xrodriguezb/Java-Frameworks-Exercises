@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+    <!-- escaneamos todos los componentes de tipo controller -->
+    <context:component-scan base-package="controller"/>
+    
+    <bean id="urlHandler" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+                <prop key="panel.htm">panelController</prop>               
+                <prop key="crearcategoria.htm">categoriaController</prop>
+                <prop key="listarcategorias.htm">categoriaController</prop> 
+                <prop key="crearlibro.htm">libroController</prop>
+                <prop key="listarlibros.htm">libroController</prop>
+                <prop key="operlibro.htm">libroController</prop>
+                <prop key="opercategoria.htm">categoriaController</prop>                        
+                <!--
+            <prop key="nuevolibro.htm">libroController</prop>
+                <prop key="guardarlibro.htm">libroController</prop>               
+                <prop key="guardarcategoria.htm">categoriaController</prop>
+                <prop key="libro.htm">libroController</prop>
+                -->   
+                <!--            
+                <prop key="panel.htm">panelController</prop>
+                <prop key="catAccion.htm">categoriaController</prop>
+                <prop key="catListar.htm">categoriaController</prop>
+                <prop key="catNueva.htm">categoriaController</prop>
+                <prop key="catDesplegar.htm">categoriaController</prop>
+                -->
+            </props>
+        </property>
+    </bean>
+
+  
+    
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+
+</beans>

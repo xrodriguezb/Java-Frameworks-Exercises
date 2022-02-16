@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17/10/2014 10:25:18 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping auto-import="true">
+    <class name="model.pojo.Categoria" table="categoria" catalog="biblioteca">
+        <id name="idCategoria" type="java.lang.Integer">
+            <column name="idCategoria" />
+            <generator class="identity" />
+        </id>
+        <property name="txtNombreCategoria" type="string">
+            <column name="txtNombreCategoria" length="60" not-null="true" />
+        </property>
+        <property name="intActivo" type="boolean">
+            <column name="intActivo" not-null="true" />
+        </property>
+        <set name="libros" table="libro" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idCategoria" not-null="true" />
+            </key>
+            <one-to-many class="model.pojo.Libro" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,49 @@
+body{
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0) );
+    background:-moz-linear-gradient( center top, #3d94f6 5%, #1e62d0 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0');
+    background-color:#3d94f6;
+    -moz-box-shadow:inset 0px 0px 0px 0px #97c4fe;
+    -webkit-box-shadow:inset 0px 0px 0px 0px #97c4fe;
+    box-shadow:inset 0px 0px 0px 0px #97c4fe;
+}
+
+nav ul {
+    list-style:none;    
+}
+nav ul li { 
+    float:left;
+    overflow: auto;
+    padding: 5px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration: none;
+}
+
+footer{
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+}
+
+#acciones_modulo{
+    border-bottom: 4px solid #3d94f6;
+}
+
+#ajaxResponse{
+    position: relative;
+    top: 30px;
+    width: 800px;
+    margin: 0 auto;
+}

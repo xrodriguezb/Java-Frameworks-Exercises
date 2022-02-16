@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17/10/2014 10:25:18 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="model.pojo.Libro" table="libro" catalog="biblioteca">
+        <id name="idLibro" type="java.lang.Integer">
+            <column name="idLibro" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="categoria" class="model.pojo.Categoria" fetch="select">
+            <column name="idCategoria" not-null="true" />
+        </many-to-one>
+        <property name="txtNombre" type="string">
+            <column name="txtNombre" length="60" not-null="true" />
+        </property>
+        <property name="txtAutor" type="string">
+            <column name="txtAutor" length="80" not-null="true" />
+        </property>
+        <property name="txtEditorial" type="string">
+            <column name="txtEditorial" length="60" not-null="true" />
+        </property>
+        <property name="txtIsbn" type="string">
+            <column name="txtISBN" length="60" not-null="true" />
+        </property>
+        <property name="intActivo" type="boolean">
+            <column name="intActivo" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
